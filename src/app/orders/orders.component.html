@@ -1,0 +1,24 @@
+<header></header>
+<div>
+    <table border="1" width="100%">
+        <tr>
+            <th>Order Id</th>
+            <th>Customer Name</th>
+            <th>Product Id</th>
+            <th>Quantity</th>
+            <th>Order Price</th>
+            <th>Order status</th>
+            <th>Time</th>
+        </tr>
+        <tr *ngFor = "let data of orders | async">
+            <td>{{data.orderid}}</td>
+            <td>{{data.customerusername}}</td>
+            <td>{{data.productid}}</td>
+            <td>{{data.qty}}</td>
+            <td>{{data.orderprice}}</td>
+            <td>{{data.status}}</td>
+            <td>{{ data.orderTime | date: 'dd/MM/yyyy, hh:mm:ss aa':'UTC+5:30' }}</td>
+            <button (click)="cancelOrder(data.orderid)">cancel</button>
+        </tr>
+    </table>
+</div>

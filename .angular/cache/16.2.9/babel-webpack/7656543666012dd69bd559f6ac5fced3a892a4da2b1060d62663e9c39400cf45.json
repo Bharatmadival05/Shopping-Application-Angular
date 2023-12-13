@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class Order {\n  constructor() {\n    const istDate = new Date().toLocaleString('en-IN', {\n      timeZone: 'Asia/Kolkata'\n    });\n    this.orderTime = istDate;\n  }\n}","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

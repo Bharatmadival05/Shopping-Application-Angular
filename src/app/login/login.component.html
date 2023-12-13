@@ -1,0 +1,73 @@
+<div id="logins">
+  <div class="wrapper1">
+    <div class="admin-button">
+      <button id="loginbtn" (click)="toggleForm('login')">Login</button>
+      <button id="adminbtn" (click)="toggleForm('admin')">Admin</button>
+    </div>
+    <div class="form-box">
+      <!-------------------login form------------------->
+      <div [@formAnimation]="formState" class="login-container" id="login">
+        <div class="top">
+          <span>Don't have an account? <a routerLink="/createcustomer">Sign Up</a></span>
+          <h1>Login</h1>
+        </div>
+        <div class="input-box">
+          <input type="text" class="input-field" placeholder='Username or Email' [(ngModel)]="this.data.username" required/>
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="input-box">
+          <input [type]="passwordVisible ? 'text' : 'password'" class="input-field" placeholder='Password' [(ngModel)]="this.data.password" required/>
+          <i class="fa-solid fa-lock"></i>
+            <i
+              id='eye'
+              class='fa-regular fa-eye : fa-eye-slash'
+              (click)="togglePasswordVisibility()"></i>
+        </div>
+        <div class="input-box">
+          <input type="submit" class="submit" placeholder='Sign In' (click)="loginUser()"/>
+        </div>
+        <div class="two-col">
+          <div class="one">
+            <input type="checkbox" id="login-check" />
+            <label htmlFor="login-check" > Remember Me</label>
+          </div>
+          <div class="two">
+            <label><a href="#">|Forgot password?</a></label>
+          </div>
+        </div>
+      </div>
+
+
+      <div [@formAnimation]="formState" class="register-container" id="admin">
+        <div class="top">
+          <span>Are you a user? <a (click)="toggleForm('login')">Sign In</a></span>
+          <h1>Admin</h1>
+        </div>
+        <div class="input-box">
+          <input type="text" class="input-field" placeholder='Username or Email' [(ngModel)]="this.admin.username" required/>
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="input-box">
+          <input [type]="passwordVisible ? 'text' : 'password'" class="input-field" placeholder='Password' [(ngModel)]="this.admin.password" required/>
+          <i class="fa-solid fa-lock"></i>
+            <i
+              id='eye'
+              class='fa-regular fa-eye : fa-eye-slash'
+              (click)="togglePasswordVisibility()"></i>
+        </div>
+        <div class="input-box">
+          <input type="submit" class="submit" placeholder='Sign In' (click)="loginAdmin()"/>
+        </div>
+        <div class="two-col">
+          <div class="one">
+            <input type="checkbox" id="login-check" />
+            <label htmlFor="login-check" > Remember Me</label>
+          </div>
+          <div class="two">
+            <label><a href="#">|Forgot password?</a></label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

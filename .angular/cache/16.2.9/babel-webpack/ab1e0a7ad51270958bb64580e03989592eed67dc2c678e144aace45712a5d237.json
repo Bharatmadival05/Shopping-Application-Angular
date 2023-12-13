@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class Customers {\n  constructor() {\n    this.custmerid = 0;\n    this.customerName = '';\n    this.gender = '';\n    this.contactNo = 0;\n    this.email = '';\n    this.address = '';\n    this.pincode = 0;\n    this.password = '';\n  }\n}","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

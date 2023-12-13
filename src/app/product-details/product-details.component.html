@@ -1,0 +1,17 @@
+
+<header></header>
+<div *ngFor="let data of productDetails">
+    <div class="container">
+        <div class="row">
+            <div class="layout-left"><img src={{data.prodImg}} alt=""></div>
+            <div class="layout-right">
+                <h5>{{data.proName}}</h5>
+                <p>{{data.proDes}}</p>
+                <h1>{{data.proPrice | currency:'INR'}}</h1>
+            </div>
+        </div>
+        <div class="button">
+            <button (click)="navigateToNewOrder(data.proId)" class="custom-button">Buy</button>
+        </div>
+    </div>
+</div>

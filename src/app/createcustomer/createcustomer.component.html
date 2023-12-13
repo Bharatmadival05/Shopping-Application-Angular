@@ -1,0 +1,126 @@
+<!-- <table class="form-table" width="60%">
+    <tr>
+        <td>Customerid</td>
+        <td><input type="number"  class="form-input" disabled></td>
+    </tr>
+    <tr>
+        <td>CustomerName</td>
+        <td><input type="text" [(ngModel)]="this.customerObj.customerName" class="form-input"></td>
+    </tr>
+    <tr>
+        <td>Customer Gender</td>
+        <td><input type="text" [(ngModel)]="this.customerObj.gender" class="form-input"></td>
+    </tr>
+    <tr>
+        <td>CustomerContact</td>
+        <td><input type="number" [(ngModel)]="this.customerObj.contactNo" class="form-input"></td>
+    </tr>
+    <tr>
+        <td>Customer email</td>
+        <td><input type="email" [(ngModel)]="this.customerObj.email" class="form-input"></td>
+    </tr>
+    <tr>
+        <td>Customer address</td>
+        <td><input type="text" [(ngModel)]="this.customerObj.address" class="form-input"></td>
+    </tr>
+    <tr>
+        <td>Customer pincode</td>
+        <td><input type="number" [(ngModel)]="this.customerObj.pincode" class="form-input"></td>
+    </tr>
+    <tr>
+        <td>Customer username</td>
+        <td><input type="text" name="username" [(ngModel)]="this.customerObj.username" class="form-input"></td>
+    </tr>
+    <tr>
+        <td>Customer password</td>
+        <td><input type="text" name="password" [(ngModel)]="this.customerObj.password" class="form-input"></td>
+    </tr>
+    <label for="new-image">Profile Image:</label>
+        <input type="file" id="new-image" name="new-image" (change)="onImageChange($event)"><br>
+
+
+    <tr>
+        <td><button (click)="signUpCustomer()" routerLink="/createcustomer" class="form-input" class="form-button">Register</button></td>
+    </tr>
+</table>
+ -->
+
+
+<div id="register">
+    <div class="wrapper1">
+        <div class="form-box">
+            <div class="register-container">
+                <div class="top">
+                    <span>Are you a user? <a routerLink="/login">Sign in</a></span>
+                    <h1>Sign Up</h1>
+                </div>
+                <div class="card">  
+                    <label for="input-file">
+                        <img *ngIf="customerObj.custimgString" [src]="customerObj.custimgString" alt="User Image">
+                        <img *ngIf="!customerObj.custimgString" src="../../assets/user.png" alt="Default User Image">
+                    </label>
+                    <input type="file" (change)="onImageChange($event)" id="input-file"/>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder='Name' [(ngModel)]="this.customerObj.customerName"/>
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="two-forms">
+                <div class="input-box">
+                    <input type="email" class="input-field" placeholder='Email' [(ngModel)]="this.customerObj.email"/>
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input type="number" class="input-field" placeholder='Phone No' [(ngModel)]="this.customerObj.contactNo"/>
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder='Address' [(ngModel)]="this.customerObj.address"/>
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div class="input-box">
+                    <input type="number" class="input-field" placeholder='pincode' [(ngModel)]="this.customerObj.pincode"/>
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div class="radio-btn">
+                    <label>Gender:</label>
+                    <div class="radio-option">
+                      <input type="radio" id="male" name="gender" value="male" [(ngModel)]="this.customerObj.gender" />
+                      <label for="male">Male</label>
+                    </div>
+                    <div class="radio-option">
+                      <input type="radio" id="female" name="gender" value="female" [(ngModel)]="this.customerObj.gender" />
+                      <label for="female">Female</label>
+                    </div>
+                    <div class="radio-option">
+                      <input type="radio" id="other" name="gender" value="other" [(ngModel)]="this.customerObj.gender" />
+                      <label for="other">Other</label>
+                    </div>
+                </div>                  
+                <div class="two-forms">
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder='username' [(ngModel)]="this.customerObj.username"/>
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="input-field" placeholder='password' [(ngModel)]="this.customerObj.password"/>
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                </div>
+                <div class="input-box">
+                    <input type="submit" class="submit" placeholder='Sign In' (click)="signUpCustomer()" routerLink="/createcustomer"/>
+                  </div>
+                  <div class="two-col">
+                    <div class="one">
+                      <input type="checkbox" id="login-check" />
+                      <label htmlFor="login-check" > Remember Me</label>
+                    </div>
+                    <div class="two">
+                      <label><a href="#">|Forgot password?</a></label>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>

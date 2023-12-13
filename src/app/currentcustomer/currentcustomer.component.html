@@ -1,0 +1,98 @@
+<header></header>
+<div class="container">
+    <div class="card">
+        <div class="card-inner">
+            <div class="front"
+                [ngStyle]="{'background': 'url(' + custimgStringVariable + ') center/cover', 'color': '#fff', 'font-size': '16px','padding': '60px 40px', 'display': 'flex', 'flex-direction': 'column', 'justify-content': 'flex-end'}">
+                <h2>{{(currentcustomer | async)?.customerName}}</h2>
+                <p>{{(currentcustomer | async)?.address}}</p>
+                <p>{{(currentcustomer | async)?.pincode}}</p>
+                <button>hover me</button>
+            </div>
+            <div class="back">
+                <img src="../../assets/waving-hand.png" alt="">
+                <h1>{{(currentcustomer | async)?.customerName.split(' ')[0]}} <span>{{(currentcustomer |
+                        async)?.customerName.split(' ')[1]}}</span></h1>
+                <p>{{(currentcustomer | async)?.contactNo}}</p>
+                <p>{{(currentcustomer | async)?.email}}</p>
+                <div class="row">
+                    <div class="col">
+                        <h2>Username </h2>
+                        <p>{{(currentcustomer | async)?.username}}</p>
+                    </div>
+                    <div class="col">
+                        <h2>Password</h2>
+                        <p>{{(currentcustomer | async)?.password}}</p>
+                    </div>
+                    <div class="col">
+                        <h2>Gender</h2>
+                        <p>{{(currentcustomer | async)?.gender}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <button (click)="toggleEditForm()">Edit Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <form id="edit-form" [hidden]="!showEditForm">
+        <label for="new-userid">User id:</label>
+        <input type="text" id="new-userid" name="new-userid" [value]="(currentcustomer | async)?.custmerid"
+            [(ngModel)]="this.custobj.custmerid"><br>
+
+        <label for="new-name">Name:</label>
+        <input type="text" id="new-name" name="new-name" [value]="(currentcustomer | async)?.customerName"
+            [(ngModel)]="this.custobj.customerName"><br>
+
+        <label for="new-gender">Gender:</label>
+        <input type="text" id="new-gender" name="new-gender" [value]="(currentcustomer | async)?.gender" disabled><br>
+
+        <label for="new-gender">Gender:</label>
+        <select id="new-gender" name="new-gender" [(ngModel)]="this.custobj.gender">
+            <option [ngValue]="'Male'">Male</option>
+            <option [ngValue]="'Female'">Female</option>
+            <option [ngValue]="'Other'">Other</option>
+        </select><br>
+
+
+        <label for="new-Gender">Contact No:</label>
+        <input type="text" id="new-contactNo" name="new-contactNo" [value]="(currentcustomer | async)?.contactNo"
+            [(ngModel)]="this.custobj.contactNo"><br>
+
+        <label for="new-Email">Email:</label>
+        <input type="text" id="new-Email" name="new-Email" [value]="(currentcustomer | async)?.email"
+            [(ngModel)]="this.custobj.email"><br>
+
+        <label for="new-Address">Address:</label>
+        <input type="text" id="new-Address" name="new-Address" [value]="(currentcustomer | async)?.address"
+            [(ngModel)]="this.custobj.address"><br>
+
+        <label for="new-Pincode">Pincode:</label>
+        <input type="text" id="new-pincode" name="new-gpincode" [value]="(currentcustomer | async)?.pincode"
+            [(ngModel)]="this.custobj.pincode"><br>
+
+        <label for="new-username">Username:</label>
+        <input type="text" id="new-username" name="new-username" placeholder="{{(currentcustomer | async)?.username}}"
+            [(ngModel)]="this.custobj.username" required><br>
+
+        <label for="new-password">Password:</label>
+        <input type="text" id="new-password" name="new-password" [value]="(currentcustomer | async)?.password"
+            [(ngModel)]="this.custobj.password"><br>
+        <!-- Add more input fields for other details as needed -->
+
+        <!-- ... (other form fields) ... -->
+
+        <label for="new-image">Profile Image:</label>
+        <input type="file" id="new-image" name="new-image" (change)="onImageChange($event)"><br>
+        <button type="button" (click)="updateUser()">Upload Image</button>
+
+
+        <!-- ... (rest of the form) ... -->
+
+
+        <input type="submit" (click)="updateUser()">
+    </form>
+</div>
+

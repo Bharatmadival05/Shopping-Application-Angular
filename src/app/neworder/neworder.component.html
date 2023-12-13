@@ -1,0 +1,20 @@
+<header></header>
+<div>
+    <div class="container">
+      <div class="column">
+        <h6>{{ username }}</h6>
+        <p>{{ proId }}</p>
+      </div>
+      <div>
+        <button (click)="decreaseQty()">-</button>
+        <input type="number" [(ngModel)]="orderObj.qty" min="1">
+        <button (click)="increaseQty()">+</button>
+      </div>
+    </div>
+    <div>
+      <!-- <button (click)="calculateTotalPrice()" class="btn">Calculate Total Price</button> -->
+      <h1 style="display: flex; justify-content: center;">{{ totalOrderPrice | currency:'INR' }}</h1>
+      <button (click)="placeOrder()" class="btn">Place Order</button>
+    </div>
+  </div>
+  

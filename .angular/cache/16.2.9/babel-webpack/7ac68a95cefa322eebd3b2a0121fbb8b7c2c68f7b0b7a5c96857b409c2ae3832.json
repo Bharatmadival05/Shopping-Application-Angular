@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class Order {\n  // Add a constructor to initialize the orderDatetime\n  constructor() {\n    this.orderDatetime = new Date().toISOString(); // Initialize with the current date and time\n  }\n}","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

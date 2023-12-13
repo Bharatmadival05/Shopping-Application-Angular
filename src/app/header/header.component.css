@@ -1,0 +1,26 @@
+img{
+    height: 80px;
+    width: 100px;
+}
+.navbar-nav{
+    margin-left: auto;
+  }
+.nav-link{
+    font-weight: bold;
+    color: aliceblue;
+}
+.d-flex{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+  .form-control{
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+.form-control{
+  width: 800px;
+}
+.btn-outline-success{
+  width:200px;
+}

@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class Customers {\n  constructor() {\n    this.address = '';\n    this.username = '';\n    this.password = '';\n  }\n}","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

@@ -115,5 +115,8 @@
         }
       }
     }},
-  "defaultProject": "First-Angular-App"
+  "defaultProject": "First-Angular-App",
+  "cli": {
+    "analytics": "4f1c232e-9879-408e-91f9-4a2ddf722e08"
+  }
 }
